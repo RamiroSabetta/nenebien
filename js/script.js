@@ -126,7 +126,7 @@
 
   var ORIGINAL_LABEL = btn.textContent;
   var ENDPOINT = 'https://api.web3forms.com/submit';
-  var MESSAGE_DURATION = 15000;
+  var CONFIRMED_DURATION = 4000;
   var hideTimer = null;
   var clearTimer = null;
 
@@ -147,7 +147,7 @@
           status.textContent = '';
           status.className = 'rsvp-status';
         }, 400);
-      }, MESSAGE_DURATION);
+      }, CONFIRMED_DURATION);
     }
   }
 
@@ -189,7 +189,7 @@
         setTimeout(function () {
           btn.disabled = false;
           btn.textContent = ORIGINAL_LABEL;
-        }, 4000);
+        }, CONFIRMED_DURATION);
       })
       .catch(function () {
         btn.disabled = false;
